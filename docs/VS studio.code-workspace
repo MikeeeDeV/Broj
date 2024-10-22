@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../programming projects/VS studio"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../programming projects/myworksp"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "myworksp"
+	}
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أسرة عم حسن</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .start-page, .main-page {
+            display: none;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .start-page {
+            background-color: pink;
+            display: flex;
+        }
+        h1 {
+            color: black;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .main-page {
+            display: none;
+            text-align: center;
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 80%;
+        }
+        .button-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .button-circle:nth-child(1) { background-color: red; }
+        .button-circle:nth-child(2) { background-color: green; }
+        .button-circle:nth-child(3) { background-color: blue; }
+        .button-circle:nth-child(4) { background-color: purple; }
+        .button-circle:nth-child(5) { background-color: orange; }
+        .content-page {
+            display: none;
+            padding: 20px;
+            font-size: 20px;
+            line-height: 1.6;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Start Page -->
+    <div class="start-page" id="startPage">
+        <h1>أهلا بأسرة عم حسن</h1>
+        <button onclick="startApp()">Start</button>
+    </div>
+
+    <!-- Main Page -->
+    <div class="main-page" id="mainPage">
+        <div class="buttons-container">
+            <div class="button-circle" onclick="showContent('content1')">أمى</div>
+            <div class="button-circle" onclick="showContent('content2')">مريم</div>
+            <div class="button-circle" onclick="showContent('content3')">رحمه</div>
+            <div class="button-circle" onclick="showContent('content4')">سدره</div>
+            <div class="button-circle" onclick="showContent('content5')">عمر</div>
+        </div>
+    </div>
+
+     <!-- PContentages -->
+    <div class="content-page" id="content1">
+        <p>السلام عليكم<br>انا ممتن لوجودك بجانبي كأم لي وسوف أحاول دائماً أن أرتقي إلى توقعاتك.</p>
+        <button onclick="goBack()">الرجوع</button>
+    </div>
+    <div class="content-page" id="content2">
+        <p>السلام عليكم<br>أنتِ بنت عسولة وطيبة، حددي طريقاً وامشي فيه، واعملي مع رحمة وسدرة ورد قرآن. أنتِ تنادين عليهم وتجيبينهم وتبدؤون فيه، لأنكِ أختهم الكبيرة. حددي نوايا كثيرة وحفزي نفسكِ، وشدي حيلك. الحياة صعبة لكنها جميلة، فاستمتعي بكل لحظة فيها.</p>
+        <button onclick="goBack()">الرجوع</button>
+    </div>
+    <div class="content-page" id="content3">
+        <p>السلام عليكم<br>كيف حالكِ... لا يعرف تفكيري الهدوء منذ أن علمت بمرضك. أرجو أن تكوني قوية وبخير، ولا يسعني الآن إلا الدعاء. فاللهم اشف رحمة شفاءً لا يغادر سقماً، واحفظها وبارك فيها وفي والديها، واغفر لها ما تقدم من ذنبها وما تأخر.</p>
+        <button onclick="goBack()">الرجوع</button>
+    </div>
+    <div class="content-page" id="content4">
+        <p>السلام عليكم<br>أنتِ عسولة، وماما تحبكِ وتريدكِ أن تحفظي القرآن مع رحمة ومريم. ربنا يرزقكِ بر ماما وبابا ويحفظهما لكِ.</p>
+        <button onclick="goBack()">الرجوع</button>
+    </div>
+    <div class="content-page" id="content5">
+        <p>السلام عليكم<br>حفظك الله يا عمر ويسّر عليك نطقك، ولنا لقاء قريب إن شاء الله. أشهد الله أني أحبك يا عمر.</p>
+        <button onclick="goBack()">الرجوع</button>
+    </div>
+
+    <script>
+        function startApp() {document.getElementById('startPage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'flex';
+        }
+
+        function showContent(contentId) {
+            document.querySelectorAll('.content-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById(contentId).style.display = 'block';
+            document.getElementById('mainPage').style.display = 'none';
+        }
+
+        function goBack() {
+            document.querySelectorAll('.content-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById('mainPage').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
